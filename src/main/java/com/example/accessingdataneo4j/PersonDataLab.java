@@ -27,6 +27,13 @@ public class PersonDataLab extends Person {
 	// private Root data;
 	// private String data;
     private String linkedin_url;
+    private String facebook_url;
+    private String gender;
+    private String industry;
+    private String work_email;
+    private String job_title;
+    private String job_title_role;
+    private String job_company_name;
 
 	private PersonDataLab()  {
 		// Empty constructor required as of Neo4j API 2.0.5
@@ -34,6 +41,13 @@ public class PersonDataLab extends Person {
 
 	public PersonDataLab(Root data) {
 		this.linkedin_url = data.data.linkedin_url;
+		this.facebook_url = data.data.facebook_url;
+		this.gender = data.data.gender;
+		this.industry = data.data.industry;
+		this.work_email = (String) data.data.work_email;
+		this.job_title = data.data.job_title;
+		this.job_title_role = data.data.job_title_role;
+		this.job_company_name = data.data.job_company_name;
 		// this.data = data;
 	}
     // public void SetId(Long id){
@@ -72,12 +86,61 @@ public class PersonDataLab extends Person {
 	// 	this.name = name;
 	// }
 
-	public String getLinkedInUrl() {
+	public String GetLinkedInUrl() {
 		return linkedin_url;
 	}	
 	
 	public void SetLinkedInUrl(String linkedin_url) {
 		this.linkedin_url = linkedin_url;
+	}
+	public String Getfacebook_url() {
+		return facebook_url;
+	}	
+	
+	public void Setfacebook_url(String facebook_url) {
+		this.facebook_url = facebook_url;
+	}
+	public String Getgender() {
+		return gender;
+	}	
+	
+	public void Setgender(String gender) {
+		this.gender = gender;
+	}
+	public String Getindustry() {
+		return industry;
+	}	
+	
+	public void Setindustry(String industry) {
+		this.industry = industry;
+	}
+	public String Getwork_email() {
+		return work_email;
+	}	
+	
+	public void Setwork_email(String work_email) {
+		this.work_email = work_email;
+	}
+	public String Getjob_title() {
+		return job_title;
+	}	
+	
+	public void Setjob_title(String job_title) {
+		this.job_title = job_title;
+	}
+	public String Getjob_title_role() {
+		return job_title_role;
+	}	
+	
+	public void Setjob_title_role(String job_title_role) {
+		this.job_title_role = job_title_role;
+	}
+	public String Getjob_company_name() {
+		return job_company_name;
+	}	
+	
+	public void Setjob_company_name(String job_company_name) {
+		this.job_company_name = job_company_name;
 	}
 
 	// import com.fasterxml.jackson.databind.ObjectMapper; // version 2.11.1

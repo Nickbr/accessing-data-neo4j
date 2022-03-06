@@ -68,7 +68,7 @@ class PersonDataLabController {
       PersonDataLab newPeep = new PersonDataLab(data);
       newPeep.setName(peep.getName());
       // newPeep.SetId(peep.getId());
-      System.out.println(newPeep.getLinkedInUrl());
+      System.out.println(newPeep.);
       System.out.println(newPeep.getName());
       // newPerson.name = peep.name;
       // newPeep.SetData(data);
