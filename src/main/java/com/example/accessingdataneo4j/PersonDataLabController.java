@@ -57,7 +57,7 @@ class PersonDataLabController {
   @PutMapping("/persondatalabcontroller/{name}")
   PersonDataLab updatePerson(@RequestBody Root data, @PathVariable String name) throws Exception {
     
-    Person peep = personRepository.findByName(name);
+    PersonDataLab peep = (PersonDataLab) personRepository.findByName(name);
     System.out.println(name);
     System.out.println(peep);
     System.out.println(data);
@@ -68,18 +68,19 @@ class PersonDataLabController {
     if(data.data.id!=""){
       
       
-      PersonDataLab newPeep = new PersonDataLab(data);
+      // PersonDataLab newPeep = new PersonDataLab(data);
       for (Experience exp : data.data.experience)
       {
         companyRepository.save(exp.company);
-        newPeep.workedAt(exp.company);
+        peep.workedAt(exp.company);
       }
-      newPeep.setName(peep.getName());
+      // newPeep.setName(peep.getName());
       // newPeep.SetId(peep.getId());
       // newPerson.name = peep.name;
       // newPeep.SetData(data);
-      personRepository.delete(peep);
-      personDataLabRepository.save(newPeep);
+      personRepository.save(peep);
+      // personRepository.delete(peep);
+      // personDataLabRepository.save(newPeep);
       return null;
     }
       
