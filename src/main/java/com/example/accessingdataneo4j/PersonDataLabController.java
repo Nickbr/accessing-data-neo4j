@@ -3,6 +3,8 @@ package com.example.accessingdataneo4j;
 
 import java.io.Console;
 
+import com.example.accessingdataneo4j.PersonDataLab.Company;
+import com.example.accessingdataneo4j.PersonDataLab.Experience;
 import com.example.accessingdataneo4j.PersonDataLab.Root;
 
 import org.apache.commons.logging.Log;
@@ -18,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 class PersonDataLabController {
 
   private final PersonRepository personRepository;
-  // private final CompanyRepository companyRepository;
+  private final CompanyRepository companyRepository;
   private final PersonDataLabRepository personDataLabRepository; 
 
-  PersonDataLabController(PersonRepository personRepository, PersonDataLabRepository personDataLabPersonExtensionRepository) {
+  PersonDataLabController(PersonRepository personRepository, PersonDataLabRepository personDataLabPersonExtensionRepository, CompanyRepository companyRepository) {
     this.personRepository = personRepository;
-    // this.companyRepository = companyRepository;
+    this.companyRepository = companyRepository;
     this.personDataLabRepository = personDataLabPersonExtensionRepository;
   }
 
@@ -65,7 +67,13 @@ class PersonDataLabController {
     // newPerson.SetLinkedinUrl(newPerson.getLinkedinUrl());
     if(data.data.id!=""){
       
+      
       PersonDataLab newPeep = new PersonDataLab(data);
+      for (Experience exp : data.data.experience)
+      {
+        companyRepository.save(exp.company);
+        newPeep.workedAt(exp.company);
+      }
       newPeep.setName(peep.getName());
       // newPeep.SetId(peep.getId());
       // newPerson.name = peep.name;

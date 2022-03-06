@@ -42,7 +42,7 @@ public class Person {
 	@Relationship(type = "Create")
 	public Set<Company> created;
 
-	public void worksWith(Company company) {
+	public void workedAt(Company company) {
 		if (created == null) {
 			created = new HashSet<>();
 		}

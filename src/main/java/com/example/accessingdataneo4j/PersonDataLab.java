@@ -157,6 +157,8 @@ public static class Email{
 }
 
 public static class Location{
+	@Id @GeneratedValue protected Long id;
+
     public String name;
     public String locality;
     public String region;
@@ -170,9 +172,13 @@ public static class Location{
 }
 
 public static class Company{
+
+    
+	@Id @GeneratedValue protected Long id;
+
     public String name;
     public String size;
-    public String id;
+    // public String id;
     public int founded;
     public String industry;
     public Location location;
@@ -181,6 +187,20 @@ public static class Company{
     public String facebook_url;
     public String twitter_url;
     public String website;
+    public Company(Company company){
+        this.name = company.name;
+        this.size = company.size;
+        this.id = company.id;
+        this.founded = company.founded;
+        this.industry = company.industry;
+        this.location = company.location;
+        this.linkedin_url = company.linkedin_url;
+        this.linkedin_id = company.linkedin_id;
+        this.facebook_url = company.facebook_url;
+        this.twitter_url = company.twitter_url;
+        this.website = company.website;
+    }
+    private Company(){}
 }
 
 public static class Title{
