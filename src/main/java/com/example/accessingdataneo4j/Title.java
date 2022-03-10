@@ -10,6 +10,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class Title{
 	@Id @GeneratedValue protected Long id;
 
+    public String partnerIcon = "/media/partners/peopledatalabs.svg";
     public String name;
     public String role;
     public String sub_role;

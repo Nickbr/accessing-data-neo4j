@@ -10,6 +10,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class Education{
 	@Id @GeneratedValue protected Long id;
 
+    public String partnerIcon = "/media/partners/peopledatalabs.svg";
     public School school;
     public ArrayList<Object> degrees;
     public Object start_date;

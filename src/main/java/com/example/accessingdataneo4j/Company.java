@@ -7,7 +7,7 @@ public class Company{
 
     
 	@Id @GeneratedValue protected Long id;
-
+    public String partnerIcon = "/media/partners/peopledatalabs.svg";
     public String name;
     public String size;
     // public String id;

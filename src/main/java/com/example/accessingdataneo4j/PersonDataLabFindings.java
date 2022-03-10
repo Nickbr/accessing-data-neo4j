@@ -7,6 +7,7 @@ import org.springframework.data.neo4j.core.schema.GeneratedValue;
 
 public class PersonDataLabFindings{
 	@Id @GeneratedValue protected Long id;
+    public String source = "People Data Labs";
     public String name = "Person Data Lab findings";
     public String full_name;
     public String first_name;

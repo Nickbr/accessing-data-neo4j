@@ -10,6 +10,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class Experience{
 	@Id @GeneratedValue protected Long id;
 
+    public String partnerIcon = "/media/partners/peopledatalabs.svg";
     public Company company;
     public String start_date;
     public String end_date;

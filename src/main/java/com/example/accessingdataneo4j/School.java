@@ -8,6 +8,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class School{
 	@Id @GeneratedValue protected Long id;
 
+    public String partnerIcon = "/media/partners/peopledatalabs.svg";
     public String name;
     public String type;
     public Location location;
