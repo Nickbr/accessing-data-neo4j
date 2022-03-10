@@ -72,9 +72,14 @@ class PersonDataLabController {
       // PersonDataLab newPeep = new PersonDataLab(data);
       for (Experience exp : data.data.experience)
       {
-        companyRepository.save(exp.company);
+        // companyRepository.save(exp.company);
         peep.workedAt(exp.company);
       }
+      // for (Email exp : data.data.emails)
+      // {
+      //   companyRepository.save(exp);
+      //   peep.emails(exp);
+      // }
       // newPeep.setName(peep.getName());
       // newPeep.SetId(peep.getId());
       // newPerson.name = peep.name;

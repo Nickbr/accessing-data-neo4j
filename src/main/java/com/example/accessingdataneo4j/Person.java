@@ -39,7 +39,7 @@ public class Person {
 	 * to ignore the direction of the relationship.
 	 * https://dzone.com/articles/modelling-data-neo4j
 	 */
-	@Relationship(type = "Worked at")
+	@Relationship(type = "Worked_at")
 	public Set<Company> workedAt;
 
 	public void workedAt(Company company) {
@@ -48,8 +48,16 @@ public class Person {
 		}
 		workedAt.add(company);
 	}
+	public Set<Email> emails;
 
-	@Relationship(type = "Person Data Lab findings")
+	public void emails(Email email) {
+		if (emails == null) {
+			emails = new HashSet<>();
+		}
+		emails.add(email);
+	}
+
+	@Relationship(type = "PersonDataLab_findings")
 	public Set<PersonDataLab> finding;
 
 	public void findings(PersonDataLab pdlFindings) {
