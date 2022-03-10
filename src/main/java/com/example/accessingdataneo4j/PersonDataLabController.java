@@ -3,9 +3,9 @@ package com.example.accessingdataneo4j;
 
 import java.io.Console;
 
-import com.example.accessingdataneo4j.PersonDataLab.Company;
-import com.example.accessingdataneo4j.PersonDataLab.Experience;
-import com.example.accessingdataneo4j.PersonDataLab.Root;
+// import com.example.accessingdataneo4j.PersonDataLab.Company;
+// import com.example.accessingdataneo4j.PersonDataLab.Experience;
+// import com.example.accessingdataneo4j.PersonDataLab.Root;
 
 import org.apache.commons.logging.Log;
 // import org.springframework.web.bind.annotation.DeleteMapping;
@@ -54,10 +54,10 @@ class PersonDataLabController {
   //   return personRepository.findByName(name);
   // }
 
-  @PutMapping("/persondatalabcontroller/{name}")
-  PersonDataLab updatePerson(@RequestBody Root data, @PathVariable String name) throws Exception {
+  @PutMapping("/persondatalabcontroller/{name}/{reportid}")
+  PersonDataLab updatePerson(@RequestBody PersonDataLab data, @PathVariable String name, @PathVariable String reportid) throws Exception {
     
-    PersonDataLab peep = (PersonDataLab) personRepository.findByName(name);
+    Person peep = personRepository.findByName(name);
     System.out.println(name);
     System.out.println(peep);
     System.out.println(data);
@@ -65,8 +65,9 @@ class PersonDataLabController {
     // peep.setName(newPerson.getName());
     // person.setRole(newPerson.getRole());
     // newPerson.SetLinkedinUrl(newPerson.getLinkedinUrl());
-    if(data.data.id!=""){
       
+      personDataLabRepository.save(data);
+      peep.findings(data);
       
       // PersonDataLab newPeep = new PersonDataLab(data);
       for (Experience exp : data.data.experience)
@@ -82,10 +83,8 @@ class PersonDataLabController {
       // personRepository.delete(peep);
       // personDataLabRepository.save(newPeep);
       return null;
-    }
       
     // else{
-      return null;
     // }
   }
 

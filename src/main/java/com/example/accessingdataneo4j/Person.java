@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.example.accessingdataneo4j.PersonDataLab.Company;
+// import com.example.accessingdataneo4j.PersonDataLab.Company;
 
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -39,16 +39,25 @@ public class Person {
 	 * to ignore the direction of the relationship.
 	 * https://dzone.com/articles/modelling-data-neo4j
 	 */
-	@Relationship(type = "Create")
-	public Set<Company> created;
+	@Relationship(type = "Worked at")
+	public Set<Company> workedAt;
 
 	public void workedAt(Company company) {
-		if (created == null) {
-			created = new HashSet<>();
+		if (workedAt == null) {
+			workedAt = new HashSet<>();
 		}
-		created.add(company);
+		workedAt.add(company);
 	}
 
+	@Relationship(type = "Person Data Lab findings")
+	public Set<PersonDataLab> finding;
+
+	public void findings(PersonDataLab pdlFindings) {
+		if (finding == null) {
+			finding = new HashSet<>();
+		}
+		finding.add(pdlFindings);
+	}
 	public String toString() {
 
 		return this.name + " created ";
