@@ -70,11 +70,11 @@ class PersonDataLabController {
       peep.findings(data);
       
       // PersonDataLab newPeep = new PersonDataLab(data);
-      for (Experience exp : data.data.experience)
-      {
-        // companyRepository.save(exp.company);
-        peep.workedAt(exp.company);
-      }
+      // for (Experience exp : data.data.experience)
+      // {
+      //   // companyRepository.save(exp.company);
+      //   peep.workedAt(exp.company);
+      // }
       // for (Email exp : data.data.emails)
       // {
       //   companyRepository.save(exp);
