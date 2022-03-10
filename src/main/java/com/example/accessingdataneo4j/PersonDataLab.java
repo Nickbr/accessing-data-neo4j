@@ -157,7 +157,7 @@ Root root = om.readValue(myJsonString, Root.class); */
 public class PersonDataLab{
 	@Id @GeneratedValue protected Long id;
 
-    public Data data;
+    public PersonDataLabFindings data;
     public int match_score;
     public ArrayList<String> matched_on;
 }

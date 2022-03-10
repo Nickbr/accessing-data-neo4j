@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 
-public class Data{
+public class PersonDataLabFindings{
 	@Id @GeneratedValue protected Long id;
+    public String name = "Person Data Lab findings";
     public String full_name;
     public String first_name;
     public Object middle_initial;
@@ -78,4 +79,5 @@ public class Data{
     public ArrayList<Experience> experience;
     public ArrayList<Education> education;
     public ArrayList<Profile> profiles;
+
 }
