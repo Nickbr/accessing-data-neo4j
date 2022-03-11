@@ -11,6 +11,7 @@ public class PeopleDataLab_Experience{
 	@Id @GeneratedValue protected Long id;
 
     public String partnerIcon = "/media/partners/peopledatalabs.svg";
+    public String name = "Work Experience";
     public PeopleDataLab_Company company;
     public String start_date;
     public String end_date;

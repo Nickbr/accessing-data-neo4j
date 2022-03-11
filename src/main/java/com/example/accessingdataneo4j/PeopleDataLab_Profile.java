@@ -8,6 +8,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class PeopleDataLab_Profile{
 	@Id @GeneratedValue protected Long id;
 
+    public String name = "Social Medial Profile";
     public String partnerIcon = "/media/partners/peopledatalabs.svg";
     public String network;
     public String url;

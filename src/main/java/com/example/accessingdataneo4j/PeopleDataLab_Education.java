@@ -11,6 +11,7 @@ public class PeopleDataLab_Education{
 	@Id @GeneratedValue protected Long id;
 
     public String partnerIcon = "/media/partners/peopledatalabs.svg";
+    public String name = "Education";
     public PeopleDataLab_School school;
     public ArrayList<Object> degrees;
     public Object start_date;

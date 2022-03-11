@@ -10,6 +10,7 @@ public class PeopleDataLab_Email{
 	@Id @GeneratedValue protected Long id;
 
     public String partnerIcon = "/media/partners/peopledatalabs.svg";
+    public String name = "Email addresses";
     public String address;
     public String type;
 }
