@@ -40,17 +40,27 @@ public class Person {
 	 * https://dzone.com/articles/modelling-data-neo4j
 	 */
 	@Relationship(type = "Worked_at")
-	public Set<Company> workedAt;
+	public Set<PeopleDataLab_Company> workedAt;
 
-	public void workedAt(Company company) {
+	public void workedAt(PeopleDataLab_Company company) {
 		if (workedAt == null) {
 			workedAt = new HashSet<>();
 		}
 		workedAt.add(company);
 	}
-	public Set<Email> emails;
 
-	public void emails(Email email) {
+	@Relationship(type = "CorporateDataLabFinding")
+	public Set<CorporateData_Findings> cdlFinding;
+
+	public void cdlFindings(CorporateData_Findings cdlf) {
+		if (cdlFinding == null) {
+			cdlFinding = new HashSet<>();
+		}
+		cdlFinding.add(cdlf);
+	}
+
+	public Set<PeopleDataLab_Email> emails;
+	public void emails(PeopleDataLab_Email email) {
 		if (emails == null) {
 			emails = new HashSet<>();
 		}
@@ -58,9 +68,9 @@ public class Person {
 	}
 
 	@Relationship(type = "PersonDataLab_findings")
-	public Set<PersonDataLab> finding;
+	public Set<PeopleDataLab> finding;
 
-	public void findings(PersonDataLab pdlFindings) {
+	public void findings(PeopleDataLab pdlFindings) {
 		if (finding == null) {
 			finding = new HashSet<>();
 		}

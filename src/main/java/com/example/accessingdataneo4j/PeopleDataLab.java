@@ -154,11 +154,12 @@ Root root = om.readValue(myJsonString, Root.class); */
 
 
 @Node
-public class PersonDataLab{
+public class PeopleDataLab{
 	@Id @GeneratedValue protected Long id;
 
-    public String source = "People Data Labs";
-    public PersonDataLabFindings data;
+    public String partnerIcon = "/media/partners/peopledatalabs.svg";
+    public String name = "People Data Lab";
+    public PeopleDataLab_Findings data;
     public int match_score;
     public ArrayList<String> matched_on;
 }

@@ -5,18 +5,17 @@ import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Node;
 
 @Node
-public class Location{
+public class PeopleDataLab_School{
 	@Id @GeneratedValue protected Long id;
 
     public String partnerIcon = "/media/partners/peopledatalabs.svg";
     public String name;
-    public String locality;
-    public String region;
-    public String metro;
-    public String country;
-    public String continent;
-    public String street_address;
-    public Object address_line_2;
-    public String postal_code;
-    public String geo;
+    public String type;
+    public PeopleDataLab_Location location;
+    public String linkedin_url;
+    public String facebook_url;
+    public String twitter_url;
+    public String linkedin_id;
+    public String website;
+    public String domain;
 }

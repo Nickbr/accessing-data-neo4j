@@ -17,22 +17,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-class PersonDataLabController {
+class PeopleDataLab_Controller {
 
   private final PersonRepository personRepository;
-  private final PersonDataLabRepository personDataLabRepository; 
+  private final PeopleDataLab_Repository personDataLabRepository; 
 
-  PersonDataLabController(PersonRepository personRepository, PersonDataLabRepository personDataLabPersonExtensionRepository) {
+  PeopleDataLab_Controller(PersonRepository personRepository, PeopleDataLab_Repository personDataLabPersonExtensionRepository) {
     this.personRepository = personRepository;
     this.personDataLabRepository = personDataLabPersonExtensionRepository;
   }
 
 
   @PutMapping("/persondatalabcontroller/{name}/{reportid}")
-  PersonDataLab updatePerson(@RequestBody PersonDataLab data, @PathVariable String name, @PathVariable String reportid) throws Exception {
+  PeopleDataLab updatePerson(@RequestBody PeopleDataLab data, @PathVariable String name, @PathVariable String reportid) throws Exception {
     
-    Person peep = personRepository.findByName(name);
     personDataLabRepository.save(data);
+    Person peep = personRepository.findByName(name);
     peep.findings(data);
     
     personRepository.save(peep);
