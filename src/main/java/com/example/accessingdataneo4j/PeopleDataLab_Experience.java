@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Property;
 
 @Node
 public class PeopleDataLab_Experience{
 	@Id @GeneratedValue protected Long id;
 
     public String partnerIcon = "/media/partners/peopledatalabs.svg";
-    public String name = "Work Experience";
+    @Property("name")
     public PeopleDataLab_Company company;
     public String start_date;
     public String end_date;
