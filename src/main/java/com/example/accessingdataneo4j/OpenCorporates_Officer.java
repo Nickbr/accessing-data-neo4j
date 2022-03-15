@@ -5,11 +5,11 @@ import java.sql.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 
-public class CorporateData_Officer {
+public class OpenCorporates_Officer {
     
 	@Id @GeneratedValue protected Long id;
 
-    public String partnerIcon = "/media/partners/corporatedata.svg";
+    public String partnerIcon = "/media/partners/opencorporates.svg";
     public Object uid;
     public String name;
     public String jurisdiction_code;
@@ -24,6 +24,6 @@ public class CorporateData_Officer {
     public String address;
     public String nationality;
     public Object date_of_birth;
-    public CorporateData_Company company;
+    public OpenCorporates_Company company;
     
 }

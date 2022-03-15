@@ -50,15 +50,24 @@ public class Person {
 	}
 
 	@Relationship(type = "CorporateDataLabFinding")
-	public Set<CorporateData_Findings> cdlFinding;
+	public Set<OpenCorporates_Findings> cdlFinding;
 
-	public void cdlFindings(CorporateData_Findings cdlf) {
+	public void cdlFindings(OpenCorporates_Findings cdlf) {
 		if (cdlFinding == null) {
 			cdlFinding = new HashSet<>();
 		}
 		cdlFinding.add(cdlf);
 	}
 
+	@Relationship(type = "OpenCorporatesFinding")
+	public Set<OpenCorporates_CompanyFindings> ocFinding;
+
+	public void ocFindings(OpenCorporates_CompanyFindings ocf) {
+		if (ocFinding == null) {
+			ocFinding = new HashSet<>();
+		}
+		ocFinding.add(ocf);
+	}
 	public Set<PeopleDataLab_Email> emails;
 	public void emails(PeopleDataLab_Email email) {
 		if (emails == null) {

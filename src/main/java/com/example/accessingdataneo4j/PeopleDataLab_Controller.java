@@ -30,7 +30,7 @@ class PeopleDataLab_Controller {
 
   @PutMapping("/persondatalabcontroller/{name}/{reportid}")
   PeopleDataLab updatePerson(@RequestBody PeopleDataLab data, @PathVariable String name, @PathVariable String reportid) throws Exception {
-    
+    System.out.print("persondatalabcontrollerupdatePerson");
     personDataLabRepository.save(data);
     Person peep = personRepository.findByName(name);
     peep.findings(data);
