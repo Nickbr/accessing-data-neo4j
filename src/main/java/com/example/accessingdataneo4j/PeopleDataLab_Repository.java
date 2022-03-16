@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.repository.Neo4jRepository;
 
 public interface PeopleDataLab_Repository extends Neo4jRepository<PeopleDataLab, Long> {
 
-	// PersonDataLab findByName(String name);
+	PeopleDataLab findByName(String name);
 	Optional<PeopleDataLab> findById(Long id);
 	// List<Person> findByCreateByName(String name);
 }

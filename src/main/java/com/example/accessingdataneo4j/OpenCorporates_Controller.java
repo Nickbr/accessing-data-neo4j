@@ -22,11 +22,13 @@ class OpenCorporates_Controller {
   private final PersonRepository personRepository;
   private final OpenCorporates_Repository openCorporates_Repository; 
   private final OpenCorporates_CompanyRepository openCorporates_CompanyRepository; 
+  private final PeopleDataLab_Repository peopleDataLab_Repository; 
 
-  OpenCorporates_Controller(PersonRepository personRepository, OpenCorporates_Repository openCorporates_Repository, OpenCorporates_CompanyRepository openCorporates_CompanyRepository) {
+  OpenCorporates_Controller(PeopleDataLab_Repository peopleDataLab_Repository, PersonRepository personRepository, OpenCorporates_Repository openCorporates_Repository, OpenCorporates_CompanyRepository openCorporates_CompanyRepository) {
     this.personRepository = personRepository;
     this.openCorporates_Repository = openCorporates_Repository;
     this.openCorporates_CompanyRepository = openCorporates_CompanyRepository;
+    this.peopleDataLab_Repository = peopleDataLab_Repository;
   }
 
 
